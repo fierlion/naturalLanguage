@@ -1,0 +1,8 @@
+import nltk
+from nltk.corpus import brown
+
+news_text = brown.words(categories='news')
+fdist = nltk.FreqDist(w.lower() for w in news_text)
+modals = ['can', 'could', 'may', 'might', 'must', 'will']
+for m in modals:
+    print(m + ':', fdist[m], end=' ')
